@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<h4>Showing list for: {{ name }}</h4>
+<ul><li style="display: inline-block;"> <h5> From-Home</h5></li>
+        <div class="form-group">
+        <form action="" method="post">
+        {% csrf_token %}
+            <div><li style="display: inline-block;"><input type="text" class="form-control" placeholder="Add to list" name="from"></>
+                <li style="display: inline-block;"><button type="submit" class="btn btn btn-primary">Add</button></li></div>
+        </form>
+
+        </div>
+</ul>
+<article class="w3-container">
+<div>
+      {% for item in data %}
+        {% if item.fromHome %}
+              <ul><p>{{ item.title }}</p></ul>
+        {% endif %}
+      {% endfor %}
+</div>
+</article>
+<ul><li style="display: inline-block;"> <h5> To-Home</h5></li>
+        <div class="form-group">
+        <form action="" method="post">
+        {% csrf_token %}
+            <div><li style="display: inline-block;"><input type="text" class="form-control" placeholder="Add to list" name="from"></>
+                <li style="display: inline-block;"><button type="submit" class="btn btn btn-primary">Add</button></li></div>
+        </form>
+
+        </div>
+</ul>
+    <div>
+      {% for item in data %}
+        {% if item.fromHome == 0 %}
+              <ul><p>{{ item.title }}</p></ul>
+        {% endif %}
+      {% endfor %}
+    </div>
+{% endblock %}
