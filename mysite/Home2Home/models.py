@@ -11,7 +11,7 @@ class persons(models.Model):
 
 class thing_list(models.Model):
     title=models.TextField()
-    person = models.ForeignKey(persons)
+    person = models.ForeignKey(persons,on_delete=models.CASCADE)
     fromHome=models.BooleanField(default=True)
 
     def __str__(self):

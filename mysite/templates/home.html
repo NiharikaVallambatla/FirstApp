@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Welcome Batlas 😄</h1>
-<h2>Whom do you want to make fat today?</h2>
       {% for person in persons %}
-        <ul><a class="btn btn-primary" href="{% url 'items_all'  person.pk %}">{{ person.name }}</a></ul>
+        <ul><a class="btn btn-primary" href="{% url 'showItems'  person.pk %}">{{ person.name }}</a></ul>
 
       {% endfor %}
 {% endblock %}
