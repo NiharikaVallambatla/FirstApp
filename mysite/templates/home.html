@@ -1,9 +1,0 @@
-{% extends 'base.html' %}
-{% block content %}
-<h1>Welcome Batlas 😄</h1>
-      {% for person in persons %}
-        <ul><a class="btn btn-primary" href="{% url 'showItems'  person.pk %}">{{ person.name }}</a></ul>
-
-      {% endfor %}
-{% endblock %}
-
